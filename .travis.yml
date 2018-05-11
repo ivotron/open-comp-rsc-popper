@@ -1,0 +1,4 @@
+---
+language: python
+services: docker
+script: docker run --rm --workdir=/home/lab -v `pwd`:/home/lab felix11h/docker-open-comp-rsc-popper bash -c 'popper run'
