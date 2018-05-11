@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# [wf] execute setup.sh stage
+LABEL=plot-reexecution ../generate_random_numbers.sh
+smt diff plot-original plot-reexecution
 

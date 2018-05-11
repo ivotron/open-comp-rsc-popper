@@ -1,7 +1,12 @@
-#!/bin/bash         
+#!/bin/bash
 
-label=$(echo $(cat /proc/sys/kernel/random/uuid)| cut -c 1-8);
+if [ -z "$LABEL" ]; then
+  LABEL="plot-original"
+fi
 
-smt run --executable=python --main=plot_numbers.py --reason='plot random numbers' --label=$label --tag=random $1
-
-#cp $BASH_SOURCE data/$label"_run.sh"
+smt run \
+  --executable=python \
+  --main=comp/plot_numbers.py \
+  --reason='plot random numbers' \
+  --label=$LABEL \
+  --tag=random $1

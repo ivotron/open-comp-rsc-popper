@@ -1,7 +1,12 @@
-#!/bin/bash         
+#!/bin/bash
 
-label=$(echo $(cat /proc/sys/kernel/random/uuid)| cut -c 1-8);
+if [ -z "$LABEL" ]; then
+  LABEL="generate-original"
+fi
 
-smt run --executable=python --main=comp/generate_random_numbers.py --reason='generate random numbers' --label=$label --tag=random comp/params.py
-
-#cp $BASH_SOURCE comp/data/$label"_run.sh"
+smt run \
+  --executable=python \
+  --main=comp/generate_random_numbers.py \
+  --reason='generate random numbers' \
+  --label=$LABEL \
+  --tag=generate comp/params.py
