@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-LABEL=plot-reexecution ../generate_random_numbers.sh
+cd /home/lab
+LABEL=plot-reexecution comp/plot_numbers.sh 1e2feb89.npy
 smt diff plot-original plot-reexecution
-
