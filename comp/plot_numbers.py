@@ -16,4 +16,4 @@ fpath = sys.argv[1]
 data = np.load(fpath)
 
 pl.plot(data)
-pl.savefig('data/' + label() + '.png')
+pl.savefig('comp/data/' + label() + '.png')
