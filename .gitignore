@@ -7,3 +7,5 @@ __pycache__/
 .smt
 params.py
 comp/data
+popper_logs
+popper_status
