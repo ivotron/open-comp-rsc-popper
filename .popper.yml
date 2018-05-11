@@ -1,0 +1,10 @@
+metadata: {}
+pipelines:
+  comp-rsc:
+    envs:
+    - host
+    path: popper_pipeline
+    stages:
+    - generate
+    - analyze
+    - plot
