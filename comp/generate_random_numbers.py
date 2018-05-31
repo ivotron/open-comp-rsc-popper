@@ -1,13 +1,15 @@
 
 import numpy as np
-import random
+import sys, yaml, random
 
-from params import n, low_bound, up_bound, n_sets, seed
+prm = yaml.load(open(sys.argv[1]))
 
-np.random.seed(seed)
-random.seed(seed)
+np.random.seed(prm['seed'])
+random.seed(prm['seed'])
 
 
-for k in range(n_sets):
-    data = np.random.uniform(low=low_bound, high=up_bound, size=n)
+for k in range(prm['n_sets']):
+    data = np.random.uniform(low=prm['low_bound'],
+                             high=prm['up_bound'],
+                             size=prm['n_sets'])
     np.save('comp/data/original-set-' + str(k), data)
