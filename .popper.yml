@@ -1,11 +1,20 @@
-metadata: {}
+badge-server-url: http://badge:
+metadata:
+  access_right: open
+  license: CC-BY-4.0
+  publication_type: article
+  upload_type: publication
 pipelines:
   comp-rsc:
     envs:
-    - host
+      host:
+        args: []
     path: popper_pipeline
     stages:
     - download-smt-db
     - generate
     - analyze
     - plot
+version: 1
+search_sources:
+- popperized
